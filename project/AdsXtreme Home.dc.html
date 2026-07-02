@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Manrope',sans-serif;color:#1b2a5e;background:#ffffff;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{text-decoration:none;color:inherit}
+input{font-family:inherit}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+</style>
+</helmet>
+
+<div style="width:100%;overflow-x:hidden">
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div style="background:#0f1b40;color:#cfe7f7;font-size:13.5px;font-weight:600;letter-spacing:.2px;text-align:center;padding:9px 16px">
+    <span style="color:#36b7e9">Limited slots —</span> Claim your <span style="color:#fff">FREE Amazon Account &amp; PPC Audit</span> (worth $500) before they're gone <span style="color:#36b7e9">→</span>
+  </div>
+
+  <!-- HEADER -->
+  <header style="position:sticky;top:0;z-index:60;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid #eaeef6">
+    <div style="max-width:1220px;margin:0 auto;padding:0 24px;height:74px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+      <a href="#top" style="display:flex;align-items:center"><img src="assets/adsxtreme-logo.png" alt="AdsXtreme" style="height:44px;width:auto;display:block"></a>
+      <nav style="display:flex;align-items:center;gap:30px;font-size:15px;font-weight:600;color:#445069">
+        <a href="#services" style="display:none">Services</a>
+        <a href="#services" data-navlink="1">Services</a>
+        <a href="#why" data-navlink="1">Why Us</a>
+        <a href="#work" data-navlink="1">Case Studies</a>
+        <a href="#process" data-navlink="1">Process</a>
+        <a href="#faq" data-navlink="1">FAQ</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:14px">
+        <a href="#contact" data-desktopcta="1" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(120deg,#2f5fb0,#36b7e9);color:#fff;font-weight:700;font-size:14.5px;padding:12px 20px;border-radius:11px;box-shadow:0 10px 24px -10px rgba(54,183,233,.7)">Get Free Audit</a>
+        <button onClick="{{ toggleMobile }}" data-burger="1" aria-label="Menu" style="display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px">
+          <span style="width:24px;height:2.5px;background:#1b2a5e;border-radius:2px;display:block"></span>
+          <span style="width:24px;height:2.5px;background:#1b2a5e;border-radius:2px;display:block"></span>
+          <span style="width:24px;height:2.5px;background:#1b2a5e;border-radius:2px;display:block"></span>
+        </button>
+      </div>
+    </div>
+    <sc-if value="{{ mobileOpen }}" hint-placeholder-val="{{ false }}">
+      <div style="border-top:1px solid #eaeef6;background:#fff;padding:14px 24px 20px;display:flex;flex-direction:column;gap:4px">
+        <a href="#services" onClick="{{ closeMobile }}" style="padding:11px 4px;font-weight:600;border-bottom:1px solid #f1f4f9">Services</a>
+        <a href="#why" onClick="{{ closeMobile }}" style="padding:11px 4px;font-weight:600;border-bottom:1px solid #f1f4f9">Why Us</a>
+        <a href="#work" onClick="{{ closeMobile }}" style="padding:11px 4px;font-weight:600;border-bottom:1px solid #f1f4f9">Case Studies</a>
+        <a href="#process" onClick="{{ closeMobile }}" style="padding:11px 4px;font-weight:600;border-bottom:1px solid #f1f4f9">Process</a>
+        <a href="#faq" onClick="{{ closeMobile }}" style="padding:11px 4px;font-weight:600;border-bottom:1px solid #f1f4f9">FAQ</a>
+        <a href="#contact" onClick="{{ closeMobile }}" style="margin-top:10px;text-align:center;background:linear-gradient(120deg,#2f5fb0,#36b7e9);color:#fff;font-weight:700;padding:13px;border-radius:11px">Get Free Audit</a>
+      </div>
+    </sc-if>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" style="position:relative;background:radial-gradient(120% 120% at 80% 0%,#1d2f63 0%,#13234e 45%,#0d1838 100%);color:#fff;overflow:hidden">
+    <div style="position:absolute;top:-120px;right:-60px;width:520px;height:760px;background:linear-gradient(120deg,#2f5fb0,#36b7e9);transform:skewX(-18deg);opacity:.16;filter:blur(2px)"></div>
+    <div style="position:absolute;top:-120px;right:140px;width:90px;height:760px;background:#36b7e9;transform:skewX(-18deg);opacity:.5"></div>
+    <div style="position:absolute;top:-120px;right:270px;width:34px;height:760px;background:#5cc6ee;transform:skewX(-18deg);opacity:.35"></div>
+    <div style="max-width:1220px;margin:0 auto;padding:78px 24px 96px;display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center" data-herogrid="1">
+      <div>
+        <div style="display:inline-flex;align-items:center;gap:9px;background:rgba(54,183,233,.14);border:1px solid rgba(54,183,233,.32);color:#9bd8f3;font-weight:700;font-size:13px;letter-spacing:.4px;padding:7px 14px;border-radius:999px;text-transform:uppercase">Amazon PPC &amp; Catalog Growth Agency</div>
+        <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(38px,5.4vw,68px);line-height:1.03;letter-spacing:-1.5px;margin:22px 0 0">We turn Amazon ad spend into<br><span style="background:linear-gradient(120deg,#5cc6ee,#36b7e9);-webkit-background-clip:text;background-clip:text;color:transparent">predictable, profitable growth.</span></h1>
+        <p style="font-size:19px;line-height:1.6;color:#c4cee6;max-width:540px;margin:24px 0 0;font-weight:500">No wasted spend. No invisible listings. No broken catalogs. Just a senior team running your PPC and catalog to a target ACoS — and scaling what works.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:34px">
+          <a href="#contact" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(120deg,#2f5fb0,#36b7e9);color:#fff;font-weight:700;font-size:16px;padding:17px 30px;border-radius:13px;box-shadow:0 18px 40px -12px rgba(54,183,233,.7)">Get My Free Audit <span style="font-size:18px">→</span></a>
+          <a href="#work" style="display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.26);color:#fff;font-weight:600;font-size:16px;padding:17px 28px;border-radius:13px">See the results</a>
+        </div>
+        <div style="display:flex;align-items:center;gap:22px;margin-top:38px;flex-wrap:wrap">
+          <div style="display:flex;flex-direction:column;gap:3px">
+            <div style="color:#ffc14d;font-size:16px;letter-spacing:2px">★★★★★</div>
+            <div style="font-size:13px;color:#9fabc9;font-weight:600">4.9/5 across Upwork &amp; Google</div>
+          </div>
+          <div style="width:1px;height:38px;background:rgba(255,255,255,.16)"></div>
+          <div style="font-size:13.5px;color:#9fabc9;font-weight:600;line-height:1.45">Trusted by <span style="color:#fff;font-weight:700">120+ brands</span><br>doing 6–8 figures on Amazon</div>
+        </div>
+      </div>
+      <!-- dashboard placeholder -->
+      <div style="position:relative">
+        <div style="position:relative;z-index:2;background:#0c1a3d;border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:18px;box-shadow:0 40px 90px -30px rgba(0,0,0,.6);animation:floaty 6s ease-in-out infinite">
+          <div style="display:flex;align-items:center;gap:7px;padding:4px 6px 14px">
+            <span style="width:10px;height:10px;border-radius:50%;background:#ff5f57;display:block"></span>
+            <span style="width:10px;height:10px;border-radius:50%;background:#febc2e;display:block"></span>
+            <span style="width:10px;height:10px;border-radius:50%;background:#28c840;display:block"></span>
+            <span style="margin-left:auto;font-size:11px;color:#6b7aa0;font-family:monospace">advertising · campaign manager</span>
+          </div>
+          <img src="assets/sample-dashboard.png" alt="Campaign performance dashboard" style="width:100%;display:block;border-radius:12px">
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:14px">
+            <div style="background:#11224b;border-radius:10px;padding:11px 12px"><div style="font-size:11px;color:#7e8fbe;font-weight:700">ACoS</div><div style="font-family:'Space Grotesk';font-size:21px;font-weight:700;color:#fff">17.4%</div></div>
+            <div style="background:#11224b;border-radius:10px;padding:11px 12px"><div style="font-size:11px;color:#7e8fbe;font-weight:700">ROAS</div><div style="font-family:'Space Grotesk';font-size:21px;font-weight:700;color:#5cc6ee">4.6x</div></div>
+            <div style="background:#11224b;border-radius:10px;padding:11px 12px"><div style="font-size:11px;color:#7e8fbe;font-weight:700">Sales</div><div style="font-family:'Space Grotesk';font-size:21px;font-weight:700;color:#fff">$1.2M</div></div>
+          </div>
+        </div>
+        <div style="position:absolute;z-index:3;top:-22px;left:-30px;background:#fff;color:#1b2a5e;border-radius:14px;padding:13px 16px;box-shadow:0 20px 40px -16px rgba(0,0,0,.5);animation:floaty 7s ease-in-out infinite">
+          <div style="font-size:11px;color:#7a86a3;font-weight:700;text-transform:uppercase;letter-spacing:.5px">ACoS reduced</div>
+          <div style="font-family:'Space Grotesk';font-size:24px;font-weight:700;color:#16a44a">↓ 38%</div>
+        </div>
+        <div style="position:absolute;z-index:3;bottom:-26px;right:-18px;background:#fff;color:#1b2a5e;border-radius:14px;padding:13px 16px;box-shadow:0 20px 40px -16px rgba(0,0,0,.5);animation:floaty 5.5s ease-in-out infinite">
+          <div style="font-size:11px;color:#7a86a3;font-weight:700;text-transform:uppercase;letter-spacing:.5px">Revenue / mo</div>
+          <div style="font-family:'Space Grotesk';font-size:24px;font-weight:700;color:#2f5fb0">+ $1.2M</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST MARQUEE -->
+  <div style="background:#f5f8fc;border-bottom:1px solid #eaeef6;padding:26px 0;overflow:hidden">
+    <div style="max-width:1220px;margin:0 auto;padding:0 24px;text-align:center;font-size:12.5px;font-weight:700;letter-spacing:1.5px;color:#8895af;text-transform:uppercase">Powering Amazon brands across home, supplements, beauty, pet, electronics &amp; apparel</div>
+    <div style="margin-top:26px;display:flex;justify-content:center">
+      <img src="assets/clients-row.png" alt="Clients: Nutratology, KeySmart, logx group, Bite Helper, Mountain Power Systems, Kaitamin" style="width:100%;max-width:1040px;height:auto;display:block;opacity:.92">
+    </div>
+  </div>
+
+  <!-- PROBLEM / LEAKS -->
+  <section id="why" style="background:#fff;padding:96px 0 30px">
+    <div style="max-width:1220px;margin:0 auto;padding:0 24px">
+      <div style="max-width:760px">
+        <div style="display:inline-flex;align-items:center;gap:8px;color:#2f5fb0;font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase">The problem</div>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(30px,4vw,46px);line-height:1.08;letter-spacing:-1px;margin:14px 0 0">Most Amazon brands aren't losing to competitors. They're losing to <span style="color:#2f5fb0">leaks.</span></h2>
+        <p style="font-size:18px;line-height:1.6;color:#5a647e;margin:18px 0 0;font-weight:500">Every month, profit quietly drains out of accounts that look "fine" on the surface. We find the leaks, plug them, and turn that recovered margin into growth.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px">
+        <sc-for list="{{ leaks }}" as="l" hint-placeholder-count="3">
+          <div data-reveal="1" style="background:#f7f9fd;border:1px solid #eaeef6;border-radius:18px;padding:30px 28px">
+            <div style="width:46px;height:46px;border-radius:12px;background:linear-gradient(120deg,#2f5fb0,#36b7e9);transform:skewX(-12deg);display:flex;align-items:center;justify-content:center;margin-bottom:20px"><span style="transform:skewX(12deg);color:#fff;font-family:'Space Grotesk';font-weight:700;font-size:18px">{{ l.n }}</span></div>
+            <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;margin:0 0 8px;letter-spacing:-.3px">{{ l.t }}</h3>
+            <p style="font-size:15.5px;line-height:1.55;color:#5a647e;margin:0;font-weight:500">{{ l.d }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAND -->
+  <section style="padding:60px 0">
+    <div style="max-width:1220px;margin:0 auto;padding:0 24px">
+      <div style="background:radial-gradient(120% 140% at 85% 0%,#1d2f63 0%,#13234e 50%,#0d1838 100%);border-radius:28px;padding:56px 40px;display:grid;grid-template-columns:repeat(4,1fr);gap:30px;color:#fff;position:relative;overflow:hidden">
+        <div style="position:absolute;top:0;right:80px;width:60px;height:100%;background:#36b7e9;transform:skewX(-18deg);opacity:.18"></div>
+        <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
+          <div style="position:relative;z-index:2">
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(34px,4vw,52px);letter-spacing:-1px;line-height:1"><span style="color:#5cc6ee">{{ s.pre }}</span><span data-count="{{ s.val }}" data-prefix="{{ s.cprefix }}" data-suffix="{{ s.csuffix }}" data-dec="{{ s.dec }}">{{ s.display }}</span></div>
+            <div style="font-size:14.5px;color:#aeb9d6;font-weight:600;margin-top:10px;line-height:1.4">{{ s.label }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" style="background:#fff;padding:70px 0 90px">
+    <div style="max-width:1220px;margin:0 auto;padding:0 24px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:48px">
+        <div style="max-width:640px">
+          <div style="display:inline-flex;align-items:center;gap:8px;color:#2f5fb0;font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase">What we do</div>
+          <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(30px,4vw,46px);line-height:1.08;letter-spacing:-1px;margin:14px 0 0">Everything your Amazon account needs — under one accountable roof.</h2>
+        </div>
+        <a href="#contact" style="display:inline-flex;align-items:center;gap:8px;color:#2f5fb0;font-weight:700;font-size:15.5px;border:1px solid #d6e0f0;padding:13px 22px;border-radius:12px">Book a strategy call →</a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+        <sc-for list="{{ services }}" as="sv" hint-placeholder-count="6">
+          <div data-reveal="1" data-svc="1" style="background:#fff;border:1px solid #e8edf6;border-radius:18px;padding:30px 28px;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease">
+            <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px">
+              <span style="font-family:'Space Grotesk';font-weight:700;font-size:14px;color:#36b7e9;letter-spacing:1px">{{ sv.n }}</span>
+              <span style="flex:1;height:1px;background:#eef2f8"></span>
+              <span style="width:28px;height:14px;background:linear-gradient(120deg,#2f5fb0,#36b7e9);transform:skewX(-22deg);display:block;border-radius:2px"></span>
+            </div>
+            <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20.5px;margin:0 0 10px;letter-spacing:-.3px">{{ sv.t }}</h3>
+            <p style="font-size:15px;line-height:1.58;color:#5a647e;margin:0;font-weight:500">{{ sv.d }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS / FRAMEWORK -->
+  <section id="process" style="background:#0d1838;color:#fff;padding:92px 0">
+    <div style="max-width:1220px;margin:0 auto;padding:0 24px">
+      <div style="text-align:center;max-width:720px;margin:0 auto">
+        <div style="display:inline-flex;align-items:center;gap:8px;color:#5cc6ee;font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase">How we work</div>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(30px,4vw,46px);line-height:1.08;letter-spacing:-1px;margin:14px 0 0">The Xtreme Growth Framework™</h2>
+        <p style="font-size:18px;line-height:1.6;color:#aeb9d6;margin:18px 0 0;font-weight:500">A repeatable system that diagnoses, fixes, and compounds — so growth isn't luck, it's process.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:54px">
+        <sc-for list="{{ steps }}" as="st" hint-placeholder-count="5">
+          <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:26px 22px;position:relative">
+            <div style="font-family:'Space Grotesk';font-weight:700;font-size:40px;color:rgba(92,198,238,.28);line-height:1;letter-spacing:-1px">{{ st.n }}</div>
+            <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:17.5px;margin:14px 0 8px;letter-spacing:-.2px">{{ st.t }}</h3>
+            <p style="font-size:14px;line-height:1.5;color:#9fabc9;margin:0;font-weight:500">{{ st.d }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASE STUDIES -->
+  <section id="work" style="background:#f5f8fc;padding:92px 0">
+    <div style="max-width:1220px;margin:0 auto;padding:0 24px">
+      <div style="max-width:680px;margin-bottom:46px">
+        <div style="display:inline-flex;align-items:center;gap:8px;color:#2f5fb0;font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase">Proof, not promises</div>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(30px,4vw,46px);line-height:1.08;letter-spacing:-1px;margin:14px 0 0">Brands we've quietly made a lot of money.</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px">
+        <sc-for list="{{ cases }}" as="c" hint-placeholder-count="3">
+          <div data-reveal="1" style="background:#fff;border:1px solid #e8edf6;border-radius:20px;overflow:hidden;box-shadow:0 22px 50px -34px rgba(20,40,90,.5)">
+            <img src="{{ c.img }}" alt="{{ c.cat }} performance" style="width:100%;height:168px;object-fit:cover;display:block;border-bottom:1px solid #e8edf6">
+            <div style="padding:26px 26px 30px">
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+                <span style="font-size:12px;font-weight:700;color:#2f5fb0;background:#eaf1fb;padding:5px 11px;border-radius:999px;letter-spacing:.4px">{{ c.cat }}</span>
+                <span style="font-family:'Space Grotesk';font-weight:700;font-size:15px;color:#1b2a5e">{{ c.brand }}</span>
+              </div>
+              <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:26px;color:#16a44a;letter-spacing:-.5px;line-height:1.1">{{ c.result }}</div>
+              <p style="font-size:14.5px;line-height:1.55;color:#5a647e;margin:12px 0 0;font-weight:500">{{ c.detail }}</p>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section style="background:#fff;padding:90px 0">
+    <div style="max-width:1220px;margin:0 auto;padding:0 24px">
+      <div style="text-align:center;max-width:640px;margin:0 auto 48px">
+        <div style="display:inline-flex;align-items:center;gap:8px;color:#2f5fb0;font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase">From our clients</div>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(28px,3.6vw,42px);line-height:1.1;letter-spacing:-1px;margin:14px 0 0">Rated 4.9/5 by the brands we scale.</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px">
+        <sc-for list="{{ testimonials }}" as="t" hint-placeholder-count="3">
+          <div data-reveal="1" style="background:#f7f9fd;border:1px solid #e8edf6;border-radius:20px;padding:30px 28px;display:flex;flex-direction:column;gap:18px">
+            <div style="display:flex;align-items:center;justify-content:space-between">
+              <div style="color:#ffc14d;font-size:16px;letter-spacing:2px">★★★★★</div>
+              <div style="font-size:11.5px;font-weight:700;color:#8895af;letter-spacing:.5px;text-transform:uppercase">{{ t.source }}</div>
+            </div>
+            <p style="font-size:16px;line-height:1.6;color:#2a3552;margin:0;font-weight:600">“{{ t.quote }}”</p>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto">
+              <div style="width:42px;height:42px;border-radius:50%;background:linear-gradient(120deg,#2f5fb0,#36b7e9);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Space Grotesk';font-weight:700;font-size:16px">{{ t.initial }}</div>
+              <div><div style="font-weight:700;font-size:14.5px;color:#1b2a5e">{{ t.name }}</div><div style="font-size:13px;color:#7a86a3;font-weight:500">{{ t.role }}</div></div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUARANTEE / OFFER -->
+  <section id="results" style="padding:30px 0 90px">
+    <div style="max-width:1220px;margin:0 auto;padding:0 24px">
+      <div style="background:linear-gradient(120deg,#2f5fb0,#36b7e9);border-radius:28px;padding:56px 48px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;color:#fff;position:relative;overflow:hidden">
+        <div style="position:absolute;top:-40px;right:60px;width:70px;height:160%;background:#fff;transform:skewX(-18deg);opacity:.1"></div>
+        <div style="position:relative;z-index:2">
+          <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.16);color:#fff;font-weight:700;font-size:12.5px;letter-spacing:1px;text-transform:uppercase;padding:7px 14px;border-radius:999px">Our guarantee</div>
+          <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(28px,3.6vw,42px);line-height:1.1;letter-spacing:-1px;margin:18px 0 0">Measurable growth in 60 days — or your next month is on us.</h2>
+          <p style="font-size:17px;line-height:1.55;color:#eaf4fb;margin:16px 0 0;font-weight:500;max-width:520px">We take on a limited number of brands at a time so every account gets senior attention. If we don't move your numbers in 60 days, you don't pay for the next.</p>
+        </div>
+        <div style="position:relative;z-index:2;display:flex;flex-direction:column;gap:14px">
+          <a href="#contact" style="text-align:center;background:#0d1838;color:#fff;font-weight:700;font-size:16.5px;padding:18px 28px;border-radius:14px">Claim your free audit →</a>
+          <div style="text-align:center;font-size:13px;color:#eaf4fb;font-weight:600">No contracts to start · Senior team · Reply within 24h</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="background:#f5f8fc;padding:90px 0">
+    <div style="max-width:880px;margin:0 auto;padding:0 24px">
+      <div style="text-align:center;margin-bottom:46px">
+        <div style="display:inline-flex;align-items:center;gap:8px;color:#2f5fb0;font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase">Questions</div>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(28px,3.6vw,42px);line-height:1.1;letter-spacing:-1px;margin:14px 0 0">The stuff brands ask us most.</h2>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="5">
+          <div style="background:#fff;border:1px solid #e8edf6;border-radius:14px;overflow:hidden">
+            <button onClick="{{ f.toggle }}" style="width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:22px 24px;display:flex;align-items:center;justify-content:space-between;gap:18px">
+              <span style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17.5px;color:#1b2a5e;letter-spacing:-.2px">{{ f.q }}</span>
+              <span style="font-size:24px;color:#36b7e9;font-weight:400;line-height:1;flex-shrink:0">{{ f.sign }}</span>
+            </button>
+            <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}">
+              <div style="padding:0 24px 24px;font-size:15.5px;line-height:1.62;color:#5a647e;font-weight:500;max-width:760px">{{ f.a }}</div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section id="contact" style="background:radial-gradient(120% 130% at 20% 0%,#1d2f63 0%,#13234e 50%,#0d1838 100%);color:#fff;padding:96px 0">
+    <div style="max-width:760px;margin:0 auto;padding:0 24px;text-align:center">
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(32px,4.4vw,52px);line-height:1.06;letter-spacing:-1.2px;margin:0">Get your free Amazon &amp; PPC audit.</h2>
+      <p style="font-size:18.5px;line-height:1.6;color:#c4cee6;margin:20px auto 0;font-weight:500;max-width:560px">Tell us where to send it. We'll review your account, spot the leaks, and show you exactly where the growth is — no obligation.</p>
+      <form onSubmit="{{ onSubmit }}" style="display:flex;gap:12px;max-width:520px;margin:34px auto 0;flex-wrap:wrap">
+        <input type="email" required placeholder="you@yourbrand.com" style="flex:1;min-width:220px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.2);border-radius:13px;padding:16px 18px;color:#fff;font-size:16px;outline:none">
+        <button type="submit" style="background:linear-gradient(120deg,#2f5fb0,#36b7e9);color:#fff;font-weight:700;font-size:16px;padding:16px 28px;border-radius:13px;border:none;cursor:pointer;box-shadow:0 16px 36px -14px rgba(54,183,233,.7)">Get my audit →</button>
+      </form>
+      <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top:18px;color:#7ee0a8;font-weight:600;font-size:15px">Thanks — we'll be in touch within 24 hours at {{ submittedEmail }}.</div>
+      </sc-if>
+      <div style="font-size:13px;color:#8895af;margin-top:18px;font-weight:600">Worth $500 · We only onboard a few brands each month</div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:#0a132e;color:#aeb9d6;padding:64px 0 30px">
+    <div style="max-width:1220px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px">
+      <div>
+        <img src="assets/adsxtreme-logo-allwhite.png" alt="AdsXtreme" style="height:40px;width:auto;display:block">
+        <p style="font-size:15px;line-height:1.6;color:#8895af;margin:16px 0 0;max-width:280px;font-weight:500">Your unfair advantage on Amazon. Senior PPC &amp; catalog management that scales brands profitably.</p>
+        <a href="mailto:info@adsxtreme.com" style="display:inline-block;margin-top:18px;color:#5cc6ee;font-weight:700;font-size:15px">info@adsxtreme.com</a>
+      </div>
+      <div>
+        <div style="font-size:13px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px">Services</div>
+        <div style="display:flex;flex-direction:column;gap:11px;font-size:14.5px;font-weight:500">
+          <a href="#services">PPC &amp; Sponsored Ads</a>
+          <a href="#services">PPC Audit &amp; Strategy</a>
+          <a href="#services">Listing Optimization</a>
+          <a href="#services">A+ Content &amp; Brand Store</a>
+          <a href="#services">Flat-File &amp; Variations</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:13px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px">Company</div>
+        <div style="display:flex;flex-direction:column;gap:11px;font-size:14.5px;font-weight:500">
+          <a href="#why">Why AdsXtreme</a>
+          <a href="#work">Case Studies</a>
+          <a href="#process">Our Process</a>
+          <a href="#faq">FAQ</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:13px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px">Get started</div>
+        <a href="#contact" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(120deg,#2f5fb0,#36b7e9);color:#fff;font-weight:700;font-size:14.5px;padding:12px 20px;border-radius:11px">Free Audit →</a>
+        <div style="display:flex;gap:14px;margin-top:20px;font-size:13px;font-weight:600">
+          <a href="#">LinkedIn</a><a href="#">Instagram</a><a href="#">YouTube</a>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:1220px;margin:46px auto 0;padding:22px 24px 0;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;color:#6b7794;font-weight:500">
+      <div>© 2026 AdsXtreme. All rights reserved.</div>
+      <div style="display:flex;gap:22px"><a href="#">Privacy Policy</a><a href="#">Terms &amp; Conditions</a></div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { mobileOpen:false, openFaq:0, submitted:false, submittedEmail:'' };
+
+  renderVals(){
+    const brands = ['NORTHPEAK','VITALCORE','PawNest','LUMA','Evergrove','APEX HOME'];
+
+    const leaks = [
+      { n:'01', t:'Wasted ad spend', d:'Broad bids, no negatives, and campaigns running on autopilot quietly burn budget every single day.' },
+      { n:'02', t:'Invisible listings', d:"Poor keyword coverage and weak content mean your products never show up where buyers are searching." },
+      { n:'03', t:'Broken catalogs', d:'Variation errors, suppressed listings, and flat-file chaos cap your sales before ads ever get a chance.' },
+    ];
+
+    const stats = [
+      { val:65, display:'65', cprefix:'$', csuffix:'M+', dec:0, pre:'', label:'Revenue generated for clients' },
+      { val:120, display:'120', cprefix:'', csuffix:'+', dec:0, pre:'', label:'Brands scaled on Amazon' },
+      { val:3.7, display:'3.7', cprefix:'', csuffix:'x', dec:1, pre:'', label:'Average client ROAS' },
+      { val:42, display:'42', cprefix:'', csuffix:'%', dec:0, pre:'', label:'Average ACoS reduction' },
+    ];
+
+    const services = [
+      { n:'01', t:'Amazon PPC & Sponsored Ads', d:'Sponsored Products, Brands & Display managed to your target ACoS — not vanity clicks. Daily optimization, bid sculpting, and keyword harvesting.' },
+      { n:'02', t:'PPC Audit & Strategy', d:'A forensic teardown of wasted spend, campaign structure, and search-term data — with a clear, prioritized action plan you own.' },
+      { n:'03', t:'Listing Optimization & SEO', d:'Keyword-rich, conversion-focused titles, bullets, and backend that rank higher and turn more clicks into actual orders.' },
+      { n:'04', t:'A+ Content & Brand Store', d:'Premium A+ modules and a Brand Store that tell your story, lift conversion, and protect your margins from price wars.' },
+      { n:'05', t:'Flat-File & Variation Handling', d:'Parent-child fixes, flat-file uploads, suppressed listings, and catalog errors resolved fast — without breaking what works.' },
+      { n:'06', t:'Full-Service Account Management', d:'One accountable senior team owning PPC, catalog, and growth end to end — so nothing falls through the cracks.' },
+    ];
+
+    const steps = [
+      { n:'01', t:'Audit & Diagnose', d:'Deep account review to find every leak in spend, content, and catalog health.' },
+      { n:'02', t:'Strategy & Roadmap', d:'A tailored plan built around your margins, goals, and category competition.' },
+      { n:'03', t:'Build & Optimize', d:'We rebuild campaigns and listings, then optimize daily on real data.' },
+      { n:'04', t:'Scale & Defend', d:'Push winners harder, expand reach, and defend your share of the Buy Box.' },
+      { n:'05', t:'Report & Compound', d:'Clear reporting and compounding gains — month after month, no guesswork.' },
+    ];
+
+    const cases = [
+      { cat:'Home & Kitchen', brand:'Apex Home', img:'assets/case-home.png', result:'ACoS 34% → 17%', detail:'Restructured the entire ad account and recovered margin to fund $1.2M/month in profitable sales.' },
+      { cat:'Supplements', brand:'VitalCore', img:'assets/case-supp.png', result:'4.6x ROAS in 90 days', detail:'Rebuilt listings and PPC from the ground up, doubling return on ad spend in a single quarter.' },
+      { cat:'Pet Care', brand:'PawNest', img:'assets/case-pet.png', result:'+212% revenue', detail:'Fixed broken variations and scaled Sponsored Brands while holding TACoS at a healthy 9%.' },
+    ];
+
+    const testimonials = [
+      { source:'Upwork', initial:'M', name:'Marcus T.', role:'Founder, Home & Kitchen brand', quote:"They found leaks our last agency completely missed. ACoS dropped fast and sales actually went up — finally an agency that gets it." },
+      { source:'Google', initial:'S', name:'Sara L.', role:'Brand Manager, Supplements', quote:"Communication is clear, the strategy is sharp, and the results speak for themselves. Best decision we made this year." },
+      { source:'Upwork', initial:'D', name:'Daniel K.', role:'Owner, Pet brand', quote:"Our catalog was a mess of broken variations. They fixed everything and then scaled us — revenue more than tripled." },
+    ];
+
+    const faqData = [
+      { q:'What types of PPC campaigns do you manage?', a:'We manage Sponsored Products, Sponsored Brands, and Sponsored Display across both Seller Central and Vendor Central, structured around your target ACoS and margins.' },
+      { q:'Do you work with brands or individual sellers?', a:'We focus on established brands and serious sellers who value structure, clear communication, and long-term, profitable growth — not quick hacks.' },
+      { q:'What exactly does the free audit include?', a:'A senior strategist reviews your account for wasted ad spend, campaign structure, listing quality, and catalog health, then shows you the biggest opportunities — with no obligation.' },
+      { q:"What's included in catalog management?", a:'Listing creation and optimization, variation and parent-child setup, flat-file handling, category and compliance fixes, suppressed-listing recovery, and ongoing catalog health monitoring.' },
+      { q:'How soon can I expect results?', a:'PPC needs a short learning and data-collection window — typically a few weeks before consistent gains. Our 60-day guarantee keeps us accountable to measurable movement.' },
+      { q:'How do I get started?', a:'Request your free audit above or email info@adsxtreme.com. We assess fit first, then map out exactly how we can move your numbers.' },
+    ];
+    const faqs = faqData.map((f,i)=>({ ...f, open:i===this.state.openFaq, sign:i===this.state.openFaq?'–':'+', toggle:()=>this.setState(s=>({ openFaq:s.openFaq===i?-1:i })) }));
+
+    return {
+      brands, leaks, stats, services, steps, cases, testimonials, faqs,
+      mobileOpen:this.state.mobileOpen,
+      submitted:this.state.submitted,
+      submittedEmail:this.state.submittedEmail,
+      toggleMobile:()=>this.setState(s=>({ mobileOpen:!s.mobileOpen })),
+      closeMobile:()=>this.setState({ mobileOpen:false }),
+      onSubmit:(e)=>{ e.preventDefault(); const v=e.target.querySelector('input').value; this.setState({ submitted:true, submittedEmail:v }); },
+    };
+  }
+
+  componentDidMount(){
+    // responsive layout adjustments (no media queries available with inline styles)
+    const applyResponsive = () => {
+      const w = window.innerWidth;
+      const set = (sel, prop, val) => document.querySelectorAll(sel).forEach(el => el.style[prop] = val);
+      const grids3 = ['[data-svc]'];
+      if (w < 920){
+        document.querySelectorAll('[data-herogrid]').forEach(el=>{ el.style.gridTemplateColumns='1fr'; el.style.gap='48px'; });
+        document.querySelectorAll('nav[style*="gap:30px"], header nav').forEach(el=>{ el.style.display='none'; });
+        document.querySelectorAll('[data-burger]').forEach(el=>{ el.style.display='flex'; });
+        document.querySelectorAll('[data-desktopcta]').forEach(el=>{ el.style.display='none'; });
+      } else {
+        document.querySelectorAll('[data-herogrid]').forEach(el=>{ el.style.gridTemplateColumns='1.05fr .95fr'; el.style.gap='54px'; });
+        document.querySelectorAll('header nav').forEach(el=>{ el.style.display='flex'; });
+        document.querySelectorAll('[data-burger]').forEach(el=>{ el.style.display='none'; });
+        document.querySelectorAll('[data-desktopcta]').forEach(el=>{ el.style.display='inline-flex'; });
+      }
+    };
+    applyResponsive();
+    window.addEventListener('resize', applyResponsive);
+
+    // hover lift for service cards
+    document.querySelectorAll('[data-svc]').forEach(el=>{
+      el.addEventListener('mouseenter',()=>{ el.style.transform='translateY(-5px)'; el.style.boxShadow='0 26px 50px -30px rgba(20,40,90,.45)'; el.style.borderColor='#cfe0f5'; });
+      el.addEventListener('mouseleave',()=>{ el.style.transform='none'; el.style.boxShadow='none'; el.style.borderColor='#e8edf6'; });
+    });
+
+    // count-up
+    const animate=(el)=>{
+      const target=parseFloat(el.dataset.count);
+      const dec=el.dataset.dec?parseInt(el.dataset.dec):0;
+      const prefix=el.dataset.prefix||''; const suffix=el.dataset.suffix||'';
+      const dur=1500; const start=performance.now();
+      const tick=(now)=>{
+        const p=Math.min(1,(now-start)/dur);
+        const e=1-Math.pow(1-p,3);
+        const val=target*e;
+        el.textContent=prefix+(dec?val.toFixed(dec):Math.round(val).toLocaleString())+suffix;
+        if(p<1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    };
+    const io=new IntersectionObserver((ents)=>{
+      ents.forEach(en=>{ if(en.isIntersecting){ animate(en.target); io.unobserve(en.target); } });
+    },{threshold:0.4});
+    setTimeout(()=>{ document.querySelectorAll('[data-count]').forEach(el=>io.observe(el)); },120);
+
+    // reveal on scroll
+    const ro=new IntersectionObserver((ents)=>{
+      ents.forEach(en=>{ if(en.isIntersecting){ en.target.style.opacity='1'; en.target.style.transform='none'; ro.unobserve(en.target); } });
+    },{threshold:0.12});
+    setTimeout(()=>{
+      document.querySelectorAll('[data-reveal]').forEach((el,i)=>{
+        el.style.opacity='0'; el.style.transform='translateY(26px)';
+        el.style.transition='opacity .7s ease '+((i%3)*0.07)+'s, transform .7s ease '+((i%3)*0.07)+'s';
+        ro.observe(el);
+      });
+    },120);
+  }
+}
+</script>
+</body>
+</html>
